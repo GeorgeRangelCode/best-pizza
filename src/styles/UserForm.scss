@@ -1,5 +1,7 @@
+@import "./Variables.scss";
+
 .wrapper__form {
-  margin-left: 15%;
+  margin-left: 20%;
   @media (max-width: 575px) {
     margin-left: 0;
   }
@@ -18,10 +20,118 @@
     width: 180px;
   }
   .title {
-    margin-top: 25px;
-    font-size: 28px;
+    margin-top: 30px;
+    font-size: 34px;
+    font-weight: bold;
+    font-family: $theme-font;
+    letter-spacing: 1.2px;
+    color: black;
   }
   .subtitle {
-    font-size: 17px;
+    font-size: 22px;
+    color: #7a7a7a;
+    letter-spacing: 0.3px;
   }
+}
+
+.input {
+  width: 370px;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  @media (max-width: 575px) {
+    width: 310px;
+  }
+}
+
+.input-container {
+  width: 370px;
+  height: 60px;
+  border-radius: 5px;
+  border: 1px solid #dbdbdb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @media (max-width: 575px) {
+    width: 310px;
+  }
+}
+
+.input input {
+  width: 310px;
+  height: 40px;
+  border: none;
+  outline: none;
+  @media (max-width: 575px) {
+    width: 250px;
+  }
+}
+
+.input-container:hover {
+  box-shadow: 0 1px 6px #20212447;
+  border-color: #dfe1e500;
+}
+
+.input .user-icon {
+  background-image: url("../assets/images/ic_usuario.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}
+
+.input .pass-icon {
+  background-image: url("../assets/images/ic_contrase§a.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}
+
+.login__button {
+  padding: 13px 20px;
+  background-color: #fdbb28;
+  border: 1px solid #fdbb28;
+  font-size: 20px;
+  font-weight: bold;
+  color: #000;
+  margin-bottom: 14px;
+  width: 370px;
+  @media (max-width: 575px) {
+    width: 310px;
+  }
+}
+
+.forgot__password {
+  text-decoration: none;
+  color: black;
+  font-weight: 600;
+  font-size: 16px;
+  margin-bottom: 35px;
+  margin-top: 30px;
+  display: block;
+  text-align: center;
+}
+
+.login__button:hover {
+  background-color: #fff;
+  color: #fdbb28;
+}
+
+::placeholder {
+  color: #c5c5c5;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #c5c5c5;
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: #c5c5c5;
 }

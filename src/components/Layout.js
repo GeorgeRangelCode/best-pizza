@@ -17,7 +17,9 @@ export const Layout = ({ children }) => {
               />
             </div>
           </div>
-          <div className="col-sm-7 layout__section">{children}</div>
+          <div className="col-sm-7 d-flex justify-content-center layout__section">
+            {children}
+          </div>
         </div>
       </div>
     </main>
