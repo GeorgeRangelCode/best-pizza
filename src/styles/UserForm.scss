@@ -1,0 +1,27 @@
+.wrapper__form {
+  margin-left: 15%;
+  @media (max-width: 575px) {
+    margin-left: 0;
+  }
+}
+
+.wrapper__form--brand {
+  padding-top: 7px;
+  padding-bottom: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @media only screen and (min-width: 1200px) {
+    max-width: 300px;
+  }
+  .logo {
+    width: 180px;
+  }
+  .title {
+    margin-top: 25px;
+    font-size: 28px;
+  }
+  .subtitle {
+    font-size: 17px;
+  }
+}
