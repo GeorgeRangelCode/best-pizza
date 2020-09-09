@@ -2,6 +2,8 @@
   margin-left: 8%;
   margin-bottom: 5%;
   margin-top: 5%;
+  display: flex;
+  justify-content: space-between;
   span {
     text-decoration: none;
     color: #9b9b9b;
@@ -14,6 +16,16 @@
     text-decoration: none;
     border-bottom: 4px solid #121215;
   }
+}
+
+.close__session {
+  background: transparent;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 17px;
+  color: #808080;
 }
 
 .storePage {

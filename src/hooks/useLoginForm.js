@@ -31,7 +31,6 @@ export const useLoginForm = ({ history }) => {
   const onSubmit = async (values) => {
     const user = searchUserAuth(values);
     if (user.length > 0) {
-      window.sessionStorage.setItem("isAuth", "on");
       await setIsAuth(true);
       await history.push("/store");
     } else {
@@ -43,5 +42,9 @@ export const useLoginForm = ({ history }) => {
     }
   };
 
-  return { users, isAuth, onSubmit };
+  const handleCloseSession = () => {
+    setIsAuth(false);
+  };
+
+  return { users, isAuth, onSubmit, searchUserAuth, handleCloseSession };
 };
