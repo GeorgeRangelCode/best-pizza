@@ -2,7 +2,6 @@ import React, { Fragment } from "react";
 import { useGetStoreList } from "../hooks/useGetStoreList";
 import { StoreList } from "../components/StoreList";
 import "../styles/StorePage.scss";
-import { Footer } from "../components/Footer";
 
 export const StorePage = () => {
   const { loading, error, storeList } = useGetStoreList();
