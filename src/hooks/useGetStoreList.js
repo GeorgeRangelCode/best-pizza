@@ -28,11 +28,15 @@ export const useGetStoreList = () => {
     }
   };
 
-  useEffect(() => {
+  const filterStoreList = () => {
     const result = storeList.filter((store) => {
       return `${store.name}`.toLowerCase().includes(query.toLowerCase());
     });
     setStoreSearch(result);
+  };
+
+  useEffect(() => {
+    filterStoreList();
   }, [query]);
 
   const handleSearch = (event) => {

@@ -1,21 +1,61 @@
-import React from "react";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import React, { useContext } from "react";
+import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 import { Layout } from "../components/Layout";
 import { Login } from "../pages/Login";
 import { StorePage } from "../pages/StorePage";
-import { ContextProvider } from "../Context";
+import { StoreDetail } from "../pages/StoreDetail";
+import Context from "../Context";
+
+const PrivateRouteStorePage = ({ component: Component, authed }) => {
+  return (
+    <Route
+      render={(props) =>
+        authed === true ? (
+          <Component {...props} />
+        ) : (
+          <Redirect to={{ pathname: "/" }} />
+        )
+      }
+    />
+  );
+};
+
+const PrivateRouteStoreDetail = ({ component: Component, authed }) => {
+  return (
+    <Route
+      render={(props) =>
+        authed === true ? (
+          <Component {...props} />
+        ) : (
+          <Redirect to={{ pathname: "/" }} />
+        )
+      }
+    />
+  );
+};
 
 export const App = () => {
+  const { isAuth } = useContext(Context);
+
   return (
-    <ContextProvider>
-      <BrowserRouter>
-        <Layout>
-          <Switch>
-            <Route exact path="/" component={Login} />
-            <Route exact path="/store" component={StorePage} />
-          </Switch>
-        </Layout>
-      </BrowserRouter>
-    </ContextProvider>
+    <BrowserRouter>
+      <Layout>
+        <Switch>
+          <Route exact path="/" component={Login} />
+          <PrivateRouteStorePage
+            authed={isAuth}
+            path="/store"
+            component={StorePage}
+          />
+
+          <PrivateRouteStoreDetail
+            exact
+            authed={isAuth}
+            path="/detail/:id"
+            component={StoreDetail}
+          />
+        </Switch>
+      </Layout>
+    </BrowserRouter>
   );
 };

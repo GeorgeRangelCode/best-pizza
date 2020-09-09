@@ -6,7 +6,12 @@ export const StoreList = ({ storeList }) => {
   return (
     <section className="store__list">
       {storeList.map((store) => (
-        <Store key={store.id} name={store.name} address={store.address} />
+        <Store
+          key={store.id}
+          name={store.name}
+          address={store.address}
+          id={store.id}
+        />
       ))}
     </section>
   );

@@ -1,6 +1,6 @@
 import React from "react";
 import { StoreList } from "../../components/StoreList";
-import { mount } from "enzyme";
+import { shallow } from "enzyme";
 
 describe("<StoreList />", () => {
   test("render del componente StoreList", () => {
@@ -12,7 +12,7 @@ describe("<StoreList />", () => {
         description: "Esta pizzeria se especializa en ingredientes salados",
       },
     ];
-    const wrapper = mount(<StoreList storeList={storeList} />);
+    const wrapper = shallow(<StoreList storeList={storeList} />);
     expect(wrapper.length).toEqual(1);
   });
 });
