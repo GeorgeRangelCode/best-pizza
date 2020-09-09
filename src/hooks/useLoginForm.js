@@ -1,9 +1,11 @@
 import { LoginService } from "../service/LoginService";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
+import Swal from "sweetalert2";
+import Context from "../Context";
 
 export const useLoginForm = ({ history }) => {
   const [users, setUsers] = useState([]);
-  const [isAuth, setIsAuth] = useState(false);
+  const { isAuth, setIsAuth } = useContext(Context);
 
   const getUsers = async () => {
     try {
@@ -26,13 +28,18 @@ export const useLoginForm = ({ history }) => {
     return userAuth;
   };
 
-  const onSubmit = async (values, actions) => {
+  const onSubmit = async (values) => {
     const user = searchUserAuth(values);
     if (user.length > 0) {
-      setIsAuth(true);
-      history.push("/store");
+      window.sessionStorage.setItem("isAuth", "on");
+      await setIsAuth(true);
+      await history.push("/store");
     } else {
-      console.error("usuario no existe")
+      Swal.fire({
+        title: "No es posible ingresar",
+        text: "Los datos ingresados son incorrectos.",
+        icon: "warning",
+      });
     }
   };
 
