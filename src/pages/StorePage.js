@@ -19,7 +19,7 @@ export const StorePage = () => {
         <p className="storePage__subtitle">Escoge tu pizzería favorita</p>
         <StoreList storeList={storeList} />
       </section>
-      <Footer />
+      {/* <Footer /> */}
     </Fragment>
   );
 };

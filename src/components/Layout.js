@@ -1,6 +1,7 @@
 import React from "react";
 import "../styles/Layout.scss";
 import pizzaImage from "../assets/images/Pizza.png";
+import { Footer } from "./Footer";
 
 export const Layout = ({ children }) => {
   return (
@@ -17,7 +18,10 @@ export const Layout = ({ children }) => {
               />
             </div>
           </div>
-          <div className="col-sm-7  layout__section">{children}</div>
+          <div className="col-sm-7  layout__section">
+            {children}
+            <Footer />
+          </div>
         </div>
       </div>
     </main>
