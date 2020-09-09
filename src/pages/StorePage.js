@@ -11,8 +11,8 @@ export const StorePage = () => {
   console.log("Store -> loading", loading);
   return (
     <Fragment>
-      <header>
-        <a href="/store">pizzería</a>
+      <header className="storePage__header">
+        <span>Pizzerías</span>
       </header>
       <section className="storePage">
         <h1 className="storePage__title">Tiendas</h1>

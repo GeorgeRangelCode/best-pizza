@@ -8,11 +8,15 @@ export const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer__social">
-        <img width="20" src={facebook} alt="facebook" />
-        <img width="20" src={instagram} alt="instagram" />
+        <a href="https://www.facebook.com/diarioMUY/" target="_blank">
+          <img src={facebook} alt="facebook" />
+        </a>
+        <a href="https://www.instagram.com/muyrestaurantecol/" target="_blank">
+          <img src={instagram} alt="instagram" />
+        </a>
       </div>
       <div className="footer__logo">
-        <img width="20" src={bestPizza} alt="Best Pizza" />
+        <img width="50" src={bestPizza} alt="Best Pizza" />
       </div>
     </footer>
   );

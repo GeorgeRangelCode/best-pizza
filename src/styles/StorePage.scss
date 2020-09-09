@@ -1,13 +1,38 @@
+.storePage__header {
+  margin-left: 8%;
+  margin-bottom: 5%;
+  margin-top: 5%;
+  span {
+    text-decoration: none;
+    color: #9b9b9b;
+    font-weight: 600;
+    padding: 0 13px;
+    font-size: 18px;
+    border-bottom: 4px solid #f6c243;
+  }
+  span:hover {
+    text-decoration: none;
+    border-bottom: 4px solid #121215;
+  }
+}
+
 .storePage {
   width: 80%;
+  @media (max-width: 575px) {
+    width: 100%;
+  }
 }
 
 .storePage__title {
-  margin-left: 5.4%;
+  margin-left: 10%;
   font-size: 24px;
+  color: #040404;
+  font-weight: 600;
 }
 
 .storePage__subtitle {
-  margin-left: 5.4%;
+  margin-left: 10%;
   font-size: 16px;
+  color: #a6a6a6;
+  font-weight: 500;
 }
