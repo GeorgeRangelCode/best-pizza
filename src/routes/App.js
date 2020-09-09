@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { Layout } from "../components/Layout";
 import { Login } from "../pages/Login";
-import { Store } from "../pages/Store";
+import { StorePage } from "../pages/StorePage";
 import { ContextProvider } from "../Context";
 
 export const App = () => {
@@ -12,7 +12,7 @@ export const App = () => {
         <Layout>
           <Switch>
             <Route exact path="/" component={Login} />
-            <Route exact path="/store" component={Store} />
+            <Route exact path="/store" component={StorePage} />
           </Switch>
         </Layout>
       </BrowserRouter>
