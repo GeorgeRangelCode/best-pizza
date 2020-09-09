@@ -2,7 +2,6 @@ import React, { Fragment } from "react";
 import { useGetStoreList } from "../hooks/useGetStoreList";
 import { StoreList } from "../components/StoreList";
 import "../styles/StorePage.scss";
-import { Footer } from "../components/Footer";
 
 export const StorePage = () => {
   const { loading, error, storeList } = useGetStoreList();
@@ -19,7 +18,7 @@ export const StorePage = () => {
         <p className="storePage__subtitle">Escoge tu pizzería favorita</p>
         <StoreList storeList={storeList} />
       </section>
-      <Footer />
+      {/* <Footer /> */}
     </Fragment>
   );
 };
