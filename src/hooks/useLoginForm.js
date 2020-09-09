@@ -29,6 +29,7 @@ export const useLoginForm = ({ history }) => {
   };
 
   const onSubmit = async (values) => {
+    console.log("onSubmit -> values", values);
     const user = searchUserAuth(values);
     if (user.length > 0) {
       window.sessionStorage.setItem("isAuth", "on");
@@ -43,5 +44,5 @@ export const useLoginForm = ({ history }) => {
     }
   };
 
-  return { users, isAuth, onSubmit };
+  return { users, isAuth, onSubmit, searchUserAuth };
 };
