@@ -4,6 +4,7 @@ import { Store } from "../components/Store";
 import { Redirect } from "react-router-dom";
 import panosPizza from "../assets/images/Panos_pizza.png";
 import "../styles/StoreDetail.scss";
+import { Header } from "../components/Header";
 
 export const StoreDetail = ({ location }) => {
   const id = location.pathname.substring(
@@ -20,16 +21,17 @@ export const StoreDetail = ({ location }) => {
 
   return (
     <div>
+      <Header />
       <Store
         id={storeDetail.id}
         name={storeDetail.name}
         address={storeDetail.address}
       />
-      <div class="container mt-2">
+      <div className="container mt-2">
         <h4>Productos</h4>
-        <ul class="list-group">
+        <ul className="list-group">
           {storeDetail.products.map((product) => (
-            <li key={product.id} class="list-group-item">
+            <li key={product.id} className="list-group-item">
               <img
                 src={panosPizza}
                 alt="Under the Dome"

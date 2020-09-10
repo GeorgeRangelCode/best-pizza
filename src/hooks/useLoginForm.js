@@ -31,8 +31,9 @@ export const useLoginForm = ({ history }) => {
   const onSubmit = async (values) => {
     const user = searchUserAuth(values);
     if (user.length > 0) {
-      await setIsAuth(true);
-      await history.push("/store");
+      setIsAuth("authenticated");
+      window.sessionStorage.setItem("isAuth", "authenticated");
+      history.push("/store");
     } else {
       Swal.fire({
         title: "No es posible ingresar",
@@ -44,6 +45,7 @@ export const useLoginForm = ({ history }) => {
 
   const handleCloseSession = () => {
     setIsAuth(false);
+    sessionStorage.removeItem("isAuth");
   };
 
   return { users, isAuth, onSubmit, searchUserAuth, handleCloseSession };

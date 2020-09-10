@@ -6,7 +6,9 @@ export function ContextProvider({ children }) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [storeList, setStoreList] = useState([]);
-  const [isAuth, setIsAuth] = useState(false);
+  const [isAuth, setIsAuth] = useState(() => {
+    return window.sessionStorage.getItem("isAuth");
+  });
 
   return (
     <Context.Provider

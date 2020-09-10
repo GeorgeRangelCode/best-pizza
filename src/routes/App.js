@@ -6,11 +6,11 @@ import { StorePage } from "../pages/StorePage";
 import { StoreDetail } from "../pages/StoreDetail";
 import Context from "../Context";
 
-const PrivateRouteStorePage = ({ component: Component, authed }) => {
+export const PrivateRouteStorePage = ({ component: Component, authed }) => {
   return (
     <Route
       render={(props) =>
-        authed === true ? (
+        authed === "authenticated" ? (
           <Component {...props} />
         ) : (
           <Redirect to={{ pathname: "/" }} />
@@ -20,11 +20,11 @@ const PrivateRouteStorePage = ({ component: Component, authed }) => {
   );
 };
 
-const PrivateRouteStoreDetail = ({ component: Component, authed }) => {
+export const PrivateRouteStoreDetail = ({ component: Component, authed }) => {
   return (
     <Route
       render={(props) =>
-        authed === true ? (
+        authed === "authenticated" ? (
           <Component {...props} />
         ) : (
           <Redirect to={{ pathname: "/" }} />
